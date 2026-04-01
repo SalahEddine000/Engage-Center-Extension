@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engage Center Case Fetcher</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Engage Center Case Fetcher</h1>
+      <div id="sessionStatus" class="session-badge">
+        <span class="status-dot"></span>
+        <span class="status-text">Checking...</span>
+      </div>
+    </header>
+
+    <main class="main">
+      <div id="emptyState" class="empty-state" style="display: none;">
+        <p class="empty-message">Open Engage Center and sign in to begin.</p>
+        <button id="btnOpenPortal" class="btn btn-secondary">Open Portal</button>
+      </div>
+
+      <div id="mainContent" class="main-content">
+        <div class="input-group">
+          <label for="caseIdInput">Case ID</label>
+          <input type="text" id="caseIdInput" placeholder="Enter Case ID" autocomplete="off">
+          <span id="inputError" class="input-error"></span>
+        </div>
+
+        <div class="actions">
+          <button id="btnFetch" class="btn btn-primary" disabled>Fetch Case</button>
+          <button id="btnOpenPortalMain" class="btn btn-secondary">Open Portal</button>
+        </div>
+
+        <div id="resultArea" class="result-area" style="display: none;">
+          <div class="result-header">
+            <h2>Result</h2>
+            <div class="result-actions">
+              <button id="btnCopyJson" class="btn btn-small">Copy JSON</button>
+              <button id="btnClear" class="btn btn-small btn-outline">Clear</button>
+            </div>
+          </div>
+
+          <div id="summaryView" class="summary-view">
+            <div class="summary-item">
+              <span class="summary-label">Case ID:</span>
+              <span id="summaryCaseId" class="summary-value">-</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Status:</span>
+              <span id="summaryStatus" class="summary-value">-</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Severity:</span>
+              <span id="summarySeverity" class="summary-value">-</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Created:</span>
+              <span id="summaryCreated" class="summary-value">-</span>
+            </div>
+            <button id="btnCopySummary" class="btn btn-small btn-outline copy-summary-btn">Copy Summary</button>
+          </div>
+
+          <div class="json-toggle">
+            <button id="btnToggleJson" class="btn btn-small btn-outline">Show Raw JSON</button>
+          </div>
+
+          <pre id="jsonView" class="json-view" style="display: none;"></pre>
+        </div>
+
+        <div id="loadingState" class="loading-state" style="display: none;">
+          <div class="spinner"></div>
+          <span>Fetching case...</span>
+        </div>
+
+        <div id="errorState" class="error-state" style="display: none;">
+          <p id="errorMessage" class="error-message"></p>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

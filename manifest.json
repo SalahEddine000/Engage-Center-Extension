@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Engage Center Case Fetcher",
+  "version": "1.0.0",
+  "description": "Fetch case details from Engage Center by Case ID using existing browser session",
+  "permissions": [
+    "storage",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "https://gateway.engagehub.azure.com/*",
+    "https://*.reactblade.portal.azure.net/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  }
+}

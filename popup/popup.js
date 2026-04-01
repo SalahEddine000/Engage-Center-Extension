@@ -13,6 +13,7 @@ const ELEMENTS = {
   resultArea: document.getElementById('resultArea'),
   summaryCaseId: document.getElementById('summaryCaseId'),
   summaryStatus: document.getElementById('summaryStatus'),
+  summaryStateAnnotation: document.getElementById('summaryStateAnnotation'),
   summarySeverity: document.getElementById('summarySeverity'),
   summaryCreated: document.getElementById('summaryCreated'),
   btnCopySummary: document.getElementById('btnCopySummary'),
@@ -156,6 +157,7 @@ function displayResult(data) {
   
   ELEMENTS.summaryCaseId.textContent = data.caseId;
   ELEMENTS.summaryStatus.textContent = caseData.status || caseData.state || '-';
+  ELEMENTS.summaryStateAnnotation.textContent = caseData.stateAnnotation || caseData.state_annotation || '-';
   ELEMENTS.summarySeverity.textContent = caseData.severity || caseData.priority || '-';
   ELEMENTS.summaryCreated.textContent = caseData.createdAt || caseData.createdDate || caseData.created || '-';
   
@@ -217,6 +219,7 @@ async function copyJson() {
 async function copySummary() {
   const summary = `Case ID: ${ELEMENTS.summaryCaseId.textContent}
 Status: ${ELEMENTS.summaryStatus.textContent}
+State: ${ELEMENTS.summaryStateAnnotation.textContent}
 Severity: ${ELEMENTS.summarySeverity.textContent}
 Created: ${ELEMENTS.summaryCreated.textContent}`;
   

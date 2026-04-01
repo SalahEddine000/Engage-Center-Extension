@@ -106,7 +106,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       break;
 
     case 'OPEN_PORTAL':
-      chrome.tabs.create({ url: 'https://gateway.engagehub.azure.com' });
+      chrome.tabs.create({ url: 'https://engagecenter.microsoft.com/#home' });
       sendResponse({ success: true });
       break;
 

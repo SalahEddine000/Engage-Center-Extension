@@ -14,6 +14,7 @@ const ELEMENTS = {
   summaryCaseId: document.getElementById('summaryCaseId'),
   summaryStatus: document.getElementById('summaryStatus'),
   summaryStateAnnotation: document.getElementById('summaryStateAnnotation'),
+  summaryStateAnnotationLastUpdatedOn: document.getElementById('summaryStateAnnotationLastUpdatedOn'),
   summarySeverity: document.getElementById('summarySeverity'),
   summaryCreated: document.getElementById('summaryCreated'),
   btnCopySummary: document.getElementById('btnCopySummary'),
@@ -158,6 +159,7 @@ function displayResult(data) {
   ELEMENTS.summaryCaseId.textContent = data.caseId;
   ELEMENTS.summaryStatus.textContent = caseData.status || caseData.state || '-';
   ELEMENTS.summaryStateAnnotation.textContent = caseData.stateAnnotation || caseData.state_annotation || '-';
+  ELEMENTS.summaryStateAnnotationLastUpdatedOn.textContent = caseData.stateAnnotationLastUpdatedOn || caseData.state_annotation_last_updated_on || '-';
   ELEMENTS.summarySeverity.textContent = caseData.severity || caseData.priority || '-';
   ELEMENTS.summaryCreated.textContent = caseData.createdAt || caseData.createdDate || caseData.created || '-';
   
@@ -220,6 +222,7 @@ async function copySummary() {
   const summary = `Case ID: ${ELEMENTS.summaryCaseId.textContent}
 Status: ${ELEMENTS.summaryStatus.textContent}
 State: ${ELEMENTS.summaryStateAnnotation.textContent}
+State Updated: ${ELEMENTS.summaryStateAnnotationLastUpdatedOn.textContent}
 Severity: ${ELEMENTS.summarySeverity.textContent}
 Created: ${ELEMENTS.summaryCreated.textContent}`;
   

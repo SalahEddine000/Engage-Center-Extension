@@ -225,7 +225,7 @@ async function copySummary() {
 Status: ${ELEMENTS.summaryStatus.textContent}
 State: ${ELEMENTS.summaryStateAnnotation.textContent}
 State Updated: ${ELEMENTS.summaryStateAnnotationLastUpdatedOn.textContent}
-Updated: ${ELEMENTS.summaryLastUpdatedOn}
+Updated: ${ELEMENTS.summaryLastUpdatedOn.textContent}
 Severity: ${ELEMENTS.summarySeverity.textContent}
 Created: ${ELEMENTS.summaryCreated.textContent}`;
   

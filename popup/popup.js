@@ -15,6 +15,7 @@ const ELEMENTS = {
   summaryStatus: document.getElementById('summaryStatus'),
   summaryStateAnnotation: document.getElementById('summaryStateAnnotation'),
   summaryStateAnnotationLastUpdatedOn: document.getElementById('summaryStateAnnotationLastUpdatedOn'),
+  summaryLastUpdatedOn: document.getElementById('summaryLastUpdatedOn'),
   summarySeverity: document.getElementById('summarySeverity'),
   summaryCreated: document.getElementById('summaryCreated'),
   btnCopySummary: document.getElementById('btnCopySummary'),
@@ -162,6 +163,7 @@ function displayResult(data) {
   ELEMENTS.summaryStateAnnotationLastUpdatedOn.textContent = caseData.stateAnnotationLastUpdatedOn || caseData.state_annotation_last_updated_on || '-';
   ELEMENTS.summarySeverity.textContent = caseData.severity || caseData.priority || '-';
   ELEMENTS.summaryCreated.textContent = caseData.createdAt || caseData.createdDate || caseData.created || '-';
+  ELEMENTS.summaryLastUpdatedOn.textContent = caseData.lastUpdatedDate || '-';
   
   ELEMENTS.resultArea.style.display = 'block';
 }
@@ -223,6 +225,7 @@ async function copySummary() {
 Status: ${ELEMENTS.summaryStatus.textContent}
 State: ${ELEMENTS.summaryStateAnnotation.textContent}
 State Updated: ${ELEMENTS.summaryStateAnnotationLastUpdatedOn.textContent}
+Updated: ${ELEMENTS.summaryLastUpdatedOn}
 Severity: ${ELEMENTS.summarySeverity.textContent}
 Created: ${ELEMENTS.summaryCreated.textContent}`;
   
